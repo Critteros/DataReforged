@@ -1,10 +1,14 @@
 #include "Main.h"
 #include <stdio.h>
 
+
 namespace DataReforged
 {
-	void Print()
+	void Test()
 	{
-		printf("Hello World!");
+		printf("DLL worked fine\n");
 	}
+		
+	
+
 }

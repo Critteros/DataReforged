@@ -2,7 +2,8 @@
 
 #include "Core.h"
 
+
 namespace DataReforged
 {
-	DR_API void Print();
+	DR_API void Test();
 }
