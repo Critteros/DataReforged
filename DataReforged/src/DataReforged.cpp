@@ -1,8 +1,10 @@
-#include <iostream>
+#include "Test.h"
+#include <stdio.h>
 
-using namespace std;
-
-int main()
+namespace DataReforged
 {
-	cout << "Hello World" << endl;
+	void Print()
+	{
+		printf("Hello World!");
+	}
 }
