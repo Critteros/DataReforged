@@ -1,3 +1,5 @@
 Build
 Build-tmp
 .vs
+.vcxproj.user
+.vcxproj.filters
