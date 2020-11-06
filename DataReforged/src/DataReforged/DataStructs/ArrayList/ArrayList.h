@@ -13,11 +13,14 @@ namespace DataReforged
 	template<typename T>
 	class ArrayList
 	{
+		/////////////START_OF_CLASS//////////////////////////////
 	private:
 		T* arr;
 		int mSize;
 		int capacity;
 
+
+		//Handle array resizing
 		void resize()
 		{
 			if (this->capacity == 0) this->capacity = 1;
@@ -35,6 +38,11 @@ namespace DataReforged
 		}
 
 	public:
+		
+
+
+		////////////////CONSTRUCTORS/////////////////////////////
+		 
 		ArrayList() : ArrayList(16) {} //Default constructor
 
 		ArrayList(int initSize)  //Main costructor
@@ -43,6 +51,16 @@ namespace DataReforged
 			this->capacity = initSize;
 			this->mSize = 0;
 		}
+		/////////////////////////////////////////////////////////
+
+		//////////////////GETTERS////////////////////////////////
+		int size() const { return this->mSize; }
+
+		bool isEmpty() const { return this->mSize == 0; }
+
+		T getLast() const { return (this->get(this->mSize - 1)); }
+
+		//////////////////////////////////////////////////
 
 		void push(T data)
 		{
@@ -53,12 +71,12 @@ namespace DataReforged
 		}
 
 
-		T get(int index)
+		T get(int index) const
 		{
 			try
 			{
 
-				if (index > this->mSize - 1) throw "IndexOutOfRangeError";
+				if ((index > this->mSize - 1) || (index < 0)) throw "IndexOutOfRangeError";
 				return arr[index];
 
 			}
@@ -69,21 +87,14 @@ namespace DataReforged
 			}
 		}
 
-		T getLast()
-		{
-			return arr[this->mSize - 1];
-		}
 
-		int size()
-		{
-			return this->mSize;
-		}
+		
 
-		bool isEmpty()
-		{
-			return this->mSize == 0;
-		}
+		
 
+		/////////////////UTILITY////////////////////////////////
+
+		//Method that clears data stored in array
 		void clear()
 		{
 			for (int i = 0; i < this->mSize; i++)
@@ -94,6 +105,9 @@ namespace DataReforged
 
 
 
+		/////////////////////////////////////////////////////////
+
+		//////////////////DESTRUCTOR/////////////////////////////
 		~ArrayList()
 		{
 			//printf("Preparing memeory cleanup\n");
@@ -101,5 +115,8 @@ namespace DataReforged
 			//printf("Memory cleanup succeded\n");
 
 		}
+		/////////////////////////////////////////////////////////
+
+		///////////////////END_OF_CLASS/////////////////////////
 	};
 }
