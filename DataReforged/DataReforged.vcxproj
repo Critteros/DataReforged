@@ -154,10 +154,11 @@
     <ClCompile Include="src\DataReforged\DataReforged.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\DataReforged\ArrayList.h" />
-    <ClInclude Include="src\DataReforged\Core.h" />
+    <ClInclude Include="src\DataReforged\DataStructs\ArrayList\ArrayList.h" />
+    <ClInclude Include="src\DataReforged\DataStructs\DataStructs.h" />
+    <ClInclude Include="src\DataReforged\Macros.h" />
     <ClInclude Include="src\DataReforged.h" />
-    <ClInclude Include="src\DataReforged\Main.h" />
+    <ClInclude Include="src\DataReforged\Core.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
